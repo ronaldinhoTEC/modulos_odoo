@@ -1,18 +1,11 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields
 
-
-# class cel_escuela(models.Model):
-#     _name = 'cel_escuela.cel_escuela'
-#     _description = 'cel_escuela.cel_escuela'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+class Escuela(models.Model):
+    _name = 'test.escuela'
+    
+    name = fields.Char("Nombre")
+    ie_type = fields.Selection([('nivel1','Inicial'),('nivel2', 'Primaria'),('primaria', 'Secundaria')],'Nivel Educativo') 
+    ie_entry_time = fields.Datetime('Hora de entrada', default=fields.Datetime.now, required=False, readonly=False, select=True)
+    

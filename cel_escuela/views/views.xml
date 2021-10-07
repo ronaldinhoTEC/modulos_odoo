@@ -1,60 +1,39 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="cel_escuela.list">
-      <field name="name">cel_escuela list</field>
-      <field name="model">cel_escuela.cel_escuela</field>
+    <record id="view_tree_escuela" model="ir.ui.view">
+      <field name="name">view.tree.escuela</field>
+      <field name="model">test.escuela</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="ie_type"/>
+          <field name="ie_entry_time"/>
         </tree>
       </field>
     </record>
--->
-
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="cel_escuela.action_window">
-      <field name="name">cel_escuela window</field>
-      <field name="res_model">cel_escuela.cel_escuela</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="cel_escuela.action_server">
-      <field name="name">cel_escuela server</field>
-      <field name="model_id" ref="model_cel_escuela_cel_escuela"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
+    <record id="view_form_escuela" model="ir.ui.view">
+      <field name="name">view.form.escuela</field>
+      <field name="model">test.escuela</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group string="Datos principales de la Institucion">
+              <field name="name" string="Nombre I.E."/>
+              <field name="ie_type" string="Nivel Educativo"/>
+              <field name="ie_entry_time" string="Hora de entrada"/>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
--->
-
-    <!-- Top menu item -->
-<!--
-    <menuitem name="cel_escuela" id="cel_escuela.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="cel_escuela.menu_1" parent="cel_escuela.menu_root"/>
-    <menuitem name="Menu 2" id="cel_escuela.menu_2" parent="cel_escuela.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="cel_escuela.menu_1_list" parent="cel_escuela.menu_1"
-              action="cel_escuela.action_window"/>
-    <menuitem name="Server to list" id="cel_escuela" parent="cel_escuela.menu_2"
-              action="cel_escuela.action_server"/>
--->
+    <record id="action_view_escuela" model="ir.actions.act_window">
+      <field name="name">[___ Escuela ___]</field>
+      <field name="res_model">test.escuela</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+      id="menu_escuelas"
+      action="cel_escuela.action_view_escuela"
+      parent=""/>
   </data>
 </odoo>
