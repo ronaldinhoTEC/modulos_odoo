@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cel_escuela_cel_escuela,cel_escuela.cel_escuela,model_cel_escuela_cel_escuela,base.group_user,1,1,1,1
