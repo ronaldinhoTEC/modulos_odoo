@@ -8,6 +8,7 @@
           <field name="name"/>
           <field name="ie_type"/>
           <field name="ie_entry_time"/>
+          <field name="ie_students"/>
         </tree>
       </field>
     </record>
@@ -21,6 +22,7 @@
               <field name="name" string="Nombre I.E."/>
               <field name="ie_type" string="Nivel Educativo"/>
               <field name="ie_entry_time" string="Hora de entrada"/>
+              <field name="ie_students" string="Numero de estudiantes"/>
             </group>
           </sheet>
         </form>
